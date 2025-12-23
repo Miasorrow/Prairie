@@ -6,7 +6,7 @@ create-pages:
 
 # ca c'est la config de gitlab pages (en gros c'est l'url de "où se trouvent les fichiers qu'il doit servir dans le repo"
   pages:
-    publish: ma_super_doc/site
+    publish: docs/site
 
 # ca c'est pour dire QUAND la pipeline/le job doit se lancer. En gros ca veut dire "quand il y a un nouveau commit sur la branche main"
   rules:
