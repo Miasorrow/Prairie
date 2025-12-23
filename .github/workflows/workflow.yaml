@@ -23,7 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python 3 -m pip install mkdocs
+          python -m pip install mkdocs
+          python -m pip install mkdocs-material
 
 
       - name: Build & Deploy MkDocs
