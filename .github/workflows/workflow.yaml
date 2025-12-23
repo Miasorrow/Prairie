@@ -1,26 +1,35 @@
-# Ca ca veut dire que cette partie de la pipeline (le "job") ca se faire sur une machine linux avec la dernière version de python installée
-image: python:latest
+name: Deploy MkDocsss to GitHub Pages
 
-# ca ca veut dire que je veux utiliser gitlab Pages (le service qui permet de mettre un site statique en ligne)
-create-pages:
+on:
+  push:
+    branches:
+      
+main
 
-# ca c'est la config de gitlab pages (en gros c'est l'url de "où se trouvent les fichiers qu'il doit servir dans le repo"
-  pages:
-    publish: prairie_doc/docs/site
+permissions:
+  contents: write
 
-# ca c'est pour dire QUAND la pipeline/le job doit se lancer. En gros ca veut dire "quand il y a un nouveau commit sur la branche main"
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+jobs:
+  deploy:
+    runs-on: linux
 
-# ca c'est les cmd qu'il doit faire dans un terminal au début du job (installation de truc etc.)
-  before_script:
-    - pip install mkdocs
-    - cd prairie_doc
+    steps:
+      
+name: Checkout du repository
+      uses: actions/checkout@v4
 
-# ca c'est les cmd qu'il doit faire pour "faire le job" (en l'occurance build le site)
-  script:
-    - mkdocs build
+      
+name: Configuration de Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
 
-# voilafffffdgfdgfdgfd
+      
+name: Installation des dépendances
+      run: |
+        pip install mkdocs
 
+      
+name: Déploiement sur GitHub Pages
+      run: mkdocs gh-deploy --force
 
