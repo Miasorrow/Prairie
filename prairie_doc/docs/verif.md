@@ -1,0 +1,14 @@
+# Documentation vérification
+
+Nous voulons vérifier que nous avons bien tout installer sur notre ordinateur à l'aide du script suivant : 
+
+```ps1
+$python = python --version 
+$nodeversion =  (Get-Package -Name "Node.js").Version
+$chrome = (Get-Package -Name "Google Chrome").Version
+$calcul =  ((2+2))
+Write-Host $python + $nodeversion + $chrome + "2+2 =" + $calcul
+```
+
+[Voici le lien vers l exo : ] (https://drive.google.com/file/d/1tvHYW-4oHmTQbSctVgXyQDP9bI7zZlpQ/view?pli=1)
+
