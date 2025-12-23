@@ -25,7 +25,11 @@ jobs:
         run: |
           python -m pip install mkdocs
           python -m pip install mkdocs-material
+          
+      - name: Build & Deploy
+        run: |
           cd prairie_doc
           mkdocs build
+          mkdocs gh-deploy
 
 
