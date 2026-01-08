@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>HTTP - My Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "HTTP";
+        var mkdocs_page_input_path = "tercia.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../script_v%C3%A9rif/">Vérif</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../question.md">question</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../doc_en_ligne/">Documentation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">HTTP</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-cest-quoi-une-requete-http">1. C’est quoi une requête HTTP ?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-cest-quoi-un-dns">2. C’est quoi un DNS ?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-cest-quoi-get">3. C’est quoi GET ?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-cest-quoi-https">4. C’est quoi https:// ?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-cest-quoi-dummyjsoncom">5. C’est quoi dummyjson.com ?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#6-cest-quoi-443">6. C’est quoi 443 ?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test">test</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../groupe/">Algo</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sql/">SQL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../diagramme/">Diagrammes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../septima/">Manipulation données</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../octavIA/">IA</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../nona/">Jeux</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">HTTP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="requete-http">Requête HTTP</h1>
+<p>Dans ce petit paragraphe on va explique des notions d'informaitique tel que la requête HTTP ou un DNS</p>
+<p>(ce qui nous intéresse c’est la nature / le type / le format, pas le contenu)</p>
+<h2 id="1-cest-quoi-une-requete-http">1. C’est quoi une requête HTTP ?</h2>
+<p>Nature : protocole </p>
+<p>Le type: GET / POST / PUT / PATCH / OPTIONS / DELETE / CONNECT / TRACE</p>
+<p>Le format : texte</p>
+<h2 id="2-cest-quoi-un-dns">2. C’est quoi un DNS ?</h2>
+<p>Nature : Protocole</p>
+<p>Type : </p>
+<p>Le format : texte</p>
+<h2 id="3-cest-quoi-get">3. C’est quoi GET ?</h2>
+<p>C'est une requête</p>
+<h2 id="4-cest-quoi-https">4. C’est quoi https:// ?</h2>
+<p>C'est le protocole d'une URL</p>
+<h2 id="5-cest-quoi-dummyjsoncom">5. C’est quoi dummyjson.com ?</h2>
+<p>Le nom de domaine lié a une adresse IP </p>
+<h3 id="6-cest-quoi-443">6. C’est quoi 443 ?</h3>
+<p>C'est un port qui est utilisé pour le S de http celui dédié au site sécurisé</p>
+<ol>
+<li>C’est quoi recipes ?</li>
+</ol>
+<h2 id="test">test</h2>
+<p>C’est quoi ? ?
+C’est quoi limit ?
+C’est quoi 10 ?
+C’est quoi HTTP/2 ?
+Que contient la réponse à cette requête ?</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../doc_en_ligne/" class="btn btn-neutral float-left" title="Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../groupe/" class="btn btn-neutral float-right" title="Algo">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../doc_en_ligne/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../groupe/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

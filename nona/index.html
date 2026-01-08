@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Jeux - My Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Jeux";
+        var mkdocs_page_input_path = "nona.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../script_v%C3%A9rif/">Vérif</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../question.md">question</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../doc_en_ligne/">Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tercia/">HTTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../groupe/">Algo</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sql/">SQL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../diagramme/">Diagrammes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../septima/">Manipulation données</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../octavIA/">IA</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Jeux</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#i-mainpy">I- main.py</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Jeux</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="jeux">JEUX</h1>
+<h2 id="i-mainpy">I- main.py</h2>
+<pre><code class="language-py">La boucle qui permet de lancer les parties plusieurs fois et tester les stratégies
+
+from partie import partie
+from strategies import rand, plusGrande, plusPetite, smart
+
+n_parties = 10_000
+victoires_robot = 0
+for i in range(n_parties):
+    gagnant = partie(
+        strategy_humain=smart,
+        strategy_robot=smart)
+    if gagnant.name == &quot;Robot&quot;:
+        victoires_robot += 1
+
+print(&quot;% victoire robot: &quot;, victoires_robot / n_parties)
+</code></pre>
+<h1 id="ii-player">II- Player</h1>
+<p>C'est la classe qui a la liste de la main du joueur ainsi que la classe play avec les stratégies qu'on implémente dans notre algo</p>
+<pre><code class="language-py">class Player:
+    def __init__(self, name: str, strategy):
+        self.name = name
+        self.hand = []
+        self.strategy = strategy
+
+    def __str__(self):
+        return self.name + &quot;: &quot; + str([str(c) for c in self.hand])
+
+    def play(self, carte=None):
+        return self.strategy(self.hand, carte)
+</code></pre>
+<h1 id="iii-card">III- card</h1>
+<p>C'est la classe card celle qui contient la valeur et la forme</p>
+<pre><code class="language-py">class Card:
+    def __init__(self, value: int, shape: str):
+        self.value = value
+        self.shape = shape
+
+    def getValue(self):
+        return self.value
+
+    def __str__(self):
+        return self.shape + str(self.value)
+</code></pre>
+<h1 id="iv-partie">IV - partie</h1>
+<p>L'algo pour faire une partie </p>
+<pre><code class="language-py">import random
+
+from Card import Card
+from player import Player
+from strategies import rand
+
+
+def partie(strategy_humain, strategy_robot):
+    # les cartes
+    pioche = [
+        Card(0, &quot;R&quot;),
+        Card(1, &quot;R&quot;),
+        Card(2, &quot;R&quot;),
+        Card(3, &quot;R&quot;),
+        Card(4, &quot;R&quot;),
+        Card(1, &quot;C&quot;),
+        Card(2, &quot;C&quot;),
+        Card(3, &quot;C&quot;),
+        Card(4, &quot;C&quot;),
+        Card(5, &quot;C&quot;),
+    ]
+    # les joueurs
+    humain = Player(&quot;Humain&quot;, strategy_humain)
+    robot = Player(&quot;Robot&quot;, strategy_robot)
+    # mélange
+    random.shuffle(pioche)
+    # distribution
+    while len(pioche) &gt; 0:
+        carte = pioche.pop(-1)
+        humain.hand.append(carte)
+        carte = pioche.pop(-1)
+        robot.hand.append(carte)
+
+    # tours
+    points_du_robot = 0
+    for tour in range(5):
+        carte_du_robot = robot.play()
+        carte_de_humain = humain.play(carte_du_robot)
+        if carte_du_robot.value &gt;= carte_de_humain.value:
+            points_du_robot += 1
+    # victoire
+    if points_du_robot &gt;= 3:
+        return robot
+    else:
+        return humain
+</code></pre>
+<h1 id="v-strategies">V - strategies</h1>
+<p>Les différentes "stratégies"</p>
+<pre><code class="language-py">import random
+from Card import Card
+
+def rand(hand, carte):
+    random.shuffle(hand)
+    return hand.pop()
+
+
+def plusGrande(hand, carte):
+    hand.sort(key=lambda carte: carte.value)
+    return hand.pop(-1)
+
+def plusPetite(hand, carte):
+    hand.sort(key=lambda carte: carte.value)
+    return hand.pop()
+
+def smart(hand, carte):
+    if carte:
+        hand.sort(key=lambda c: c.value)
+        for c in hand:
+            if c.value &gt; carte.value:
+                hand.remove(c)
+                return c
+    return plusPetite(hand, carte)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../octavIA/" class="btn btn-neutral float-left" title="IA"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../octavIA/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
