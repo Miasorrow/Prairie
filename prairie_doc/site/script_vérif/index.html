@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>question - My Docs</title>
+    <title>Documentation vérification - My Docs</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "question";
-        var mkdocs_page_input_path = "question.md";
+        var mkdocs_page_name = "Documentation v\u00e9rification";
+        var mkdocs_page_input_path = "script_v\u00e9rif.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -47,8 +47,8 @@
                 <li class="toctree-l1"><a class="" href="../verif.md">V</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">question</a>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../question/">question</a>
                 </li>
               </ul>
       </div>
@@ -65,7 +65,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">question</li>
+      <li class="breadcrumb-item active">Documentation vérification</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -74,13 +74,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="documentation-verification">Documentation vérification</h1>
+<p>Nous voulons vérifier que nous avons bien tout installer sur notre ordinateur à l'aide du script suivant : </p>
+<pre><code class="language-ps1">$python = python --version 
+$nodeversion =  (Get-Package -Name &quot;Node.js&quot;).Version
+$chrome = (Get-Package -Name &quot;Google Chrome&quot;).Version
+$calcul =  ((2+2))
+Write-Host $python + $nodeversion + $chrome + &quot;2+2 =&quot; + $calcul
+</code></pre>
+<p>[Voici le lien vers l exo : ] (https://github.com/Miasorrow/Prairie/tree/e807e959c52df987a0c8c13a4b6bfd10373bd5c3/prairie_doc)</p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
 
   <hr/>
 
@@ -101,8 +106,6 @@
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
-    
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

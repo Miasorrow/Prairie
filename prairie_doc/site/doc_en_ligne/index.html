@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>V - My Docs</title>
+    <title>Documentation en ligne ! - My Docs</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "V";
-        var mkdocs_page_input_path = "verif.md";
+        var mkdocs_page_name = "Documentation en ligne !";
+        var mkdocs_page_input_path = "doc_en_ligne.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -43,10 +43,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">V</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../verif.md">V</a>
                 </li>
               </ul>
               <ul>
@@ -67,7 +65,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">V</li>
+      <li class="breadcrumb-item active">Documentation en ligne !</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -76,22 +74,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="documentation-verification">Documentation vérification</h1>
-<p>Nous voulons vérifier que nous avons bien tout installer sur notre ordinateur à l'aide du script suivant : </p>
-<pre><code class="language-ps1">$python = python --version 
-$nodeversion =  (Get-Package -Name &quot;Node.js&quot;).Version
-$chrome = (Get-Package -Name &quot;Google Chrome&quot;).Version
-$calcul =  ((2+2))
-Write-Host $python + $nodeversion + $chrome + &quot;2+2 =&quot; + $calcul
+                <h1 id="documentation-en-ligne">Documentation en ligne !</h1>
+<h2 id="i-ecrire-la-doc">I. Ecrire la doc</h2>
+<p>Pour le second exercice, nous devions écrire une documentation de toute la prairie.</p>
+<p>La documentation nous permet de présenter le travail en cours.</p>
+<h2 id="ii-mise-en-ligne">II. Mise en ligne</h2>
+<p>La deuxième étape, la mise en ligne
+J'ai donc utilisé github pour mettre en ligne sur un site statique ma documetation</p>
+<ol>
+<li>J'ai créé un github workflow sur git c'est un script qui s'execute pour créer une environnement virtuel avec toutes les dépendances nécessaire pour la mise en ligne. Voici le script</li>
+</ol>
+<pre><code class="language-py">name: ci 
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: echo &quot;cache_id=$(date --utc '+%V')&quot; &gt;&gt; $GITHUB_ENV 
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: ~/.cache 
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs
+      - run: cd prairie_doc
+      - run: mkdocs gh-deploy --force -f prairie_doc/mkdocs.yml
+      #prout grkgifgkfiqgeq
 </code></pre>
-<p>[Voici le lien vers l exo : ] (https://drive.google.com/file/d/1tvHYW-4oHmTQbSctVgXyQDP9bI7zZlpQ/view?pli=1)</p>
+<p>Après j'ai configurer ma gh-pages, puis avec la ligne de commande : </p>
+<pre><code class="language-bash">mkdocs gh-deploy
+</code></pre>
+<p>J'ai pu déployé le site et le rendre disponible</p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../question/" class="btn btn-neutral float-right" title="question">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -113,10 +143,6 @@ Write-Host $python + $nodeversion + $chrome + &quot;2+2 =&quot; + $calcul
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../question/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
