@@ -2,7 +2,7 @@ name: ci
 on:
   push:
     branches:
-      - initiale
+      - main
 permissions:
   contents: write
 jobs:
@@ -26,5 +26,5 @@ jobs:
             mkdocs-material-
       - run: pip install mkdocs
       - run: cd prairie_doc
-      - run: mkdocs gh-deploy --force -f prairie_doc/mkdocs.yml
+      - run: mkdocs gh-deploy --force -f mkdocs.yml
       
