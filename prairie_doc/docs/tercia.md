@@ -4,14 +4,41 @@ Dans ce petit paragraphe on va explique des notions d'informaitique tel que la r
 
 (ce qui nous intéresse c’est la nature / le type / le format, pas le contenu)
 
-C’est quoi une requête HTTP ?
-nature : 
-C’est quoi un DNS ?
-C’est quoi GET ?
-C’est quoi https:// ?
-C’est quoi dummyjson.com ?
-C’est quoi 443 ?
-C’est quoi recipes ?
+## 1. C’est quoi une requête HTTP ?
+
+Nature : protocole 
+
+Le type: GET / POST / PUT / PATCH / OPTIONS / DELETE / CONNECT / TRACE
+
+Le format : texte
+
+## 2. C’est quoi un DNS ?
+
+Nature : Protocole
+
+Type : 
+
+Le format : texte
+
+## 3. C’est quoi GET ?
+
+C'est une requête
+
+## 4. C’est quoi https:// ?
+
+C'est le protocole d'une URL
+
+## 5. C’est quoi dummyjson.com ?
+
+Le nom de domaine lié a une adresse IP 
+
+### 6. C’est quoi 443 ?
+
+C'est un port qui est utilisé pour le S de http celui dédié au site sécurisé
+
+6. C’est quoi recipes ?
+
+
 C’est quoi ? ?
 C’est quoi limit ?
 C’est quoi 10 ?
