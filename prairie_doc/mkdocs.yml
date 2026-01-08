@@ -1,6 +1,15 @@
 site_name: My Docs
 nav:
   - Home: index.md
-  - Vérif: script_verif.md
+  - Vérif: script_vérif.md
   - question: question.md
+  - Documentation: doc_en_ligne.md
+  - HTTP : tercia.md
+  - Algo : groupe.md
+  - SQL : sql.md
+  - Diagrammes : diagramme.md
+  - Manipulation données : septima.md 
+  - IA : octavIA.md 
+  - Jeux : nona.md
+
 theme: readthedocs

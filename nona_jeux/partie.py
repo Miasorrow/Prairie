@@ -1,3 +1,5 @@
+# partie
+
 import random
 
 from Card import Card

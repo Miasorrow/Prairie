@@ -27,3 +27,4 @@ while len(groupes[groupe_hazard]) == k:
     groupes[groupe_hazard].append(eleve)
 
 print(groupes)
+

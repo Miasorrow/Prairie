@@ -1,3 +1,5 @@
+# Player
+
 class Player:
     def __init__(self, name: str, strategy):
         self.name = name

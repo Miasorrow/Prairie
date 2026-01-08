@@ -186,7 +186,7 @@ for person in people:               # pour chaque persone du tableau
 
 max = 0
 riche_man = 0
-for person in hommes2:               # pour chaque persone du tableau
+for person in hommes2:               
     if person["gender"] == "Male": 
         salaire  = float(person["income"].replace("$", "").strip())
         if salaire > max : 
