@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "prairie_doc/**"
 permissions:
   contents: write
 jobs:
