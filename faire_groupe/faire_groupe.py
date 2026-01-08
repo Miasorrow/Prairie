@@ -28,3 +28,5 @@ while len(groupes[groupe_hazard]) == k:
 
 print(groupes)
 
+##loç_àcd dhfhdjgkhfdkjghfjg
+
