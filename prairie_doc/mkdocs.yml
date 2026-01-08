@@ -1,6 +1,6 @@
 site_name: My Docs
 nav:
   - Home: index.md
-  - V: verif.md
+  - Vérif: script_verif.md
   - question: question.md
 theme: readthedocs
