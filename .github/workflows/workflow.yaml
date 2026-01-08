@@ -25,7 +25,6 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs
-      - run: cd prairie_doc
-      - run: mkdocs gh-deploy --config-file ./mkdocs.yml --remote-branch main
-      # - run: mkdocs gh-deploy --force -f mkdocs.yml
+      #- run: cd prairie_doc
+      - run: mkdocs gh-deploy --force -f prairie_doc/mkdocs.yml
       
